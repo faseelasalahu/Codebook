@@ -33,7 +33,7 @@ const searchTerm =new URLSearchParams(search).get("q")
 
     }
     fetchProduct()
-  },[searchTerm])
+  },[searchTerm]);//esLint-disable-Line
 
   return (
      <main>
