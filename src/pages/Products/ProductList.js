@@ -4,24 +4,32 @@ import {FilterBar} from './components/FilterBar'
 import { useLocation } from 'react-router-dom';
 import useTitle  from '../../hooks/useTitle'
 import { useFilter } from '../../context';
+import { getProductList } from '../../services';
+import { toast } from 'react-toastify';
 
  function ProductList() {
   const { products, initialProductList } = useFilter() 
  
  const [show, setShow] = useState(false)
 
+
 const search = useLocation().search
 const searchTerm =new URLSearchParams(search).get("q")
- useTitle("Explore Ebooks")
+ useTitle("Explore Ebooks Collections-Codebook")
 
 
 
   useEffect(()=> {
     async function fetchProduct(){
-      const response = await fetch(`http://localhost:8000/products?name_like=${searchTerm ? searchTerm : ""}`)
-      const data = await response.json()
+      try{
+           const data = await getProductList(searchTerm)
+           initialProductList(data)
+           
+      }catch(error){
+        toast.error(error.message);
        
-      initialProductList(data)
+      }
+      
 
     }
     fetchProduct()
@@ -40,6 +48,7 @@ const searchTerm =new URLSearchParams(search).get("q")
           </div>    
 
           <div className="flex flex-wrap justify-center lg:flex-row">
+          
             {products.map((product)=>(
                   <ProductCard key={product.id} product={product}/>
             ))}
