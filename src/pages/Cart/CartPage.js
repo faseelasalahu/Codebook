@@ -3,7 +3,7 @@ import {CartList} from './components/CartList';
 import  {useCart } from '../../context/CartContext';
 import useTitle from '../../hooks/useTitle';
 
-export default function CartPage() {
+export  function CartPage() {
  
 const {cartList} = useCart()
  useTitle(`Cart-Codebook (${cartList.length})`)

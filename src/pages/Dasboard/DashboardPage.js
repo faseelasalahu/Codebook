@@ -5,7 +5,7 @@ import { getUserOrder } from "../../services/dataService";
 import useTitle from "../../hooks/useTitle";
 import { toast } from "react-toastify";
 
-export const DashBoardPage = () => {
+ function DashboardPage () {
   const [orders, setOrder] = useState([]);
   useTitle("Dashboard-Codebook");
 
@@ -37,3 +37,4 @@ export const DashBoardPage = () => {
     </main>
   );
 };
+ export default DashboardPage

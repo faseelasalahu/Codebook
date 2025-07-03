@@ -1,12 +1,15 @@
  
- import React from 'react'
+
  import {Hero} from '../components/Hero';
  import {FeaturedProducts} from './FeaturedProducts' 
  import {Testimonials} from './Testimonials'
  import {Faq} from './Faq'
 import useTitle from '../../../hooks/useTitle';
- function Homepage() {
-  useTitle("Home-CodeBook")
+
+export const Homepage = ()=> {
+ 
+    useTitle("Home-CodeBook");
+
    return (
     <main>
        <Hero />
@@ -18,5 +21,4 @@ import useTitle from '../../../hooks/useTitle';
    )
  }
  
- export default Homepage
  

@@ -5,7 +5,7 @@ import Header from './components/layouts/Header';
 import AllRoutes from './routes/AllRoutes';
 
 
-function App() {
+export  const App = () => {
   return (
     <div className="App dark:bg-dark" >
       <>
@@ -17,4 +17,3 @@ function App() {
   );
 }
 
-export default App;
