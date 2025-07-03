@@ -32,8 +32,8 @@ const searchTerm =new URLSearchParams(search).get("q")
       
 
     }
-    fetchProduct()
-  },[searchTerm]);//esLint-disable-Line
+    fetchProduct()// eslint-disable-next-line react-hooks/exhaustive-deps
+  },[searchTerm]);
 
   return (
      <main>
