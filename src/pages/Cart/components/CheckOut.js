@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { createOrder, getUser } from "../../../services/dataService";
 import { toast } from "react-toastify";
 
-export const Checkout = ({ setCheckout }) => {
+function Checkout  ({ setCheckout })  {
   const { cartList, total, clearCart } = useCart();
   const [user, setUser] = useState({});
   const navigate = useNavigate();
@@ -184,3 +184,4 @@ export const Checkout = ({ setCheckout }) => {
     </section>
   );
 };
+export default Checkout
