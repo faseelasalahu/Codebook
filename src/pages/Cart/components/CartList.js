@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import{ CartCard} from './CartCard'
-import Checkout from './Checkout';
+import CheckOut from './CheckOut';
 import { useCart } from '../../../context'
 export const CartList = () => {
   const [checkOut, setCheckout] = useState(false)
@@ -33,7 +33,7 @@ export const CartList = () => {
           </button>
         </div>
       </section>
-     {checkOut && <Checkout setCheckout= {setCheckout} /> } 
+     {checkOut && <CheckOut setCheckout= {setCheckout} /> } 
     </>
   )
 }
